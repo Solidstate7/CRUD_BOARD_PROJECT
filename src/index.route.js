@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const accountRouter = require('./account/account.route')
-const boardRouter = require('./board/board.route')
+// const boardRouter = require('./board/board.route')
 
 router.get('/' , (req, res) => {
     console.log("INDEX ROUTER: ", req.user);
@@ -10,6 +10,6 @@ router.get('/' , (req, res) => {
 
 router.use('/accounts', accountRouter)
 
-router.use('/boards', boardRouter)
+// router.use('/boards', boardRouter)
 
 module.exports = router
