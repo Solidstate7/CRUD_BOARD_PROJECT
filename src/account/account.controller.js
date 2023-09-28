@@ -1,7 +1,7 @@
 const accountService = require('./account.service')
 
 exports.getSignin = (req, res) => {
-    res.render('signin.html')
+    res.render('account/signin.html')
 }
 
 exports.getSignout = (req, res) => {
@@ -14,11 +14,11 @@ exports.postSignin = async (req, res, next) => {
     
     const result = await accountService.signin(req.body)
 
-    if(!result.isSignin) return res.redirect('/')
+    if(!result.isSignin) return res.status(401).send('Invalid ID or Password.')
 
     res.cookie('token', result.data)
     res.redirect('/')
     } catch (e) {
-        next()
+        next(e)
     }
 }
