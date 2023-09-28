@@ -4,7 +4,7 @@ const accountRouter = require('./account/account.route')
 // const boardRouter = require('./board/board.route')
 
 router.get('/' , (req, res) => {
-    console.log("INDEX ROUTER: ", req.user);
+    // console.log("INDEX ROUTER: ", req.user);
     res.render('index.html', { user: req.user })
 })
 

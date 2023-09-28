@@ -18,11 +18,13 @@ exports.createAccount = async (user_id, user_pw, lvl = 1) => {
 exports.searchAccount = async (obj_fields) => {
     try {
     const whereClause = Object.keys(obj_fields).map(field => `${field}=?`).join(' AND ')
+
     const sql = `SELECT * FROM accounts WHERE ${whereClause}`
+
     const valueArr = Object.values(obj_fields)
 
     const [[result]] = await pool.query(sql, valueArr)
-    console.log(result);
+
     return result
 
     } catch (e) {
