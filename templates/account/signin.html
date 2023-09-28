@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign In</title>
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="../../public/css/index.css"
+        />
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="../../public/css/account/index.css"
+        />
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <a href="/"><img src="../../public/images/logo.png" /></a>
+                </div>
+                <div class="nav">
+                    <a href="/boards/notice">NOTICE</a>
+                    <a href="/boards/list">BOARD</a>
+                    <a href="/accounts/mypage">MY PAGE</a>
+                    <a href="/accounts/signin">SIGN IN</a>
+                </div>
+            </div>
+            <div class="wapper">
+                <div class="signin">
+                    <h2>SIGN IN TO BOARD</h2>
+                    <div class="box">
+                        <form action="" method="post">
+                            <ul>
+                                <li>
+                                    <span class="icon">
+                                        <img src="../../public/images/id.png" />
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        name="user_id"
+                                        placeholder="아이디"
+                                    />
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <img src="../../public/images/pw.png" />
+                                    </span>
+                                    <input
+                                        type="password"
+                                        name="user_pw"
+                                        placeholder="비밀번호"
+                                    />
+                                </li>
+                            </ul>
+                            <button class="btn" type="submit">SIGN IN</button>
+                        </form>
+                    </div>
+                    <div class="account">
+                        No account? <a href="/accounts/signup">Create one</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a
+                    href="https://github.com/Solidstate7/CRUD_BOARD_PROJECT"
+                    target="_blank"
+                >
+                    <img src="../../public/images/git.png" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

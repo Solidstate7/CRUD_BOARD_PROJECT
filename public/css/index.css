@@ -13,7 +13,7 @@ a {
     /* width: 1440px; */
     width: 100%;
     max-width: 1920px;
-    height: 1024px;
+    height: 710px;
     position: relative;
     overflow: hidden;
 }
@@ -58,16 +58,20 @@ a {
     font-size: 1.2rem;
 }
 
-.wapper {
+.wrapper {
     width: 100%;
 }
 
 .slideBox {
-    width: 1052px;
-    height: 615px;
+    width: 600px;
+    height: 200px;
     position: absolute;
-    left: 250px;
+    left: 450px;
     top: 205px;
+}
+
+.slide img {
+    width: 100%;
 }
 
 .slideController {
@@ -111,18 +115,19 @@ a {
     background: #a67968;
     /* width: 1440px; */
     width: 100%;
-    height: 110px;
+    height: 100px;
     position: absolute;
     left: 0px;
-    top: 912px;
-}
-
-.footer a {
-    position: absolute;
+    bottom: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.footer a {
+    width: 40px;
+}
+
+.footer a img {
     width: 100%;
-    border: 1px solid black;
-    padding: 20px 0;
 }
