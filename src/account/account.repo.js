@@ -11,21 +11,22 @@ exports.createAccount = async (user_id, user_pw, lvl = 1) => {
     return true
 
     } catch (e) {
-        throw new Error('Repo Error ', e.message)
+        throw new Error('accountRepo Error ' + e.message)
     }
 }
 
-exports.searchAccount = async (user_id, user_pw) => {
+exports.searchAccount = async (obj_fields) => {
     try {
-    const sql = `SELECT * FROM accounts WHERE user_id=? AND user_pw=?`
-    const valueArr = [user_id, user_pw]
+    const whereClause = Object.keys(obj_fields).map(field => `${field}=?`).join(' AND ')
+    const sql = `SELECT * FROM accounts WHERE ${whereClause}`
+    const valueArr = Object.values(obj_fields)
 
     const [[result]] = await pool.query(sql, valueArr)
-
+    console.log(result);
     return result
 
     } catch (e) {
-        throw new Error('Repo Error ', e.message)
+        throw new Error('accountRepo Error ' + e.message)
     }
 
 }
@@ -41,7 +42,7 @@ exports.updateAccount = async (new_pw, user_pw) => {
     return true
 
     } catch (e) {
-        throw new Error('Repo Error ', e.message)
+        throw new Error('accountRepo Error ' + e.message)
     }
 }
 
@@ -56,9 +57,6 @@ exports.deleteAccount = async (user_pw) => {
     return true
 
     } catch (e) {
-        throw new Error('Repo Error ', e.message)
+        throw new Error('accountRepo Error ' + e.message)
     }
 }
-
-exports.createAccount('eunjae', '1234');
-exports.deleteAccount('1234');
