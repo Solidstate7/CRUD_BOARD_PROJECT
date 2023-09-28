@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("../../fonts/ttf/OtomanopeeOne-Regular.ttf") format("truetype");
+}
+
+.signin {
+    position: absolute;
+    left: 550px;
+    top: 200px;
+    width: 451px;
+    height: auto;
+}
+
+h2 {
+    color: #733232;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "MyCustomFont", sans-serif;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+}
+
+ul li {
+    border-radius: 15px;
+    border: 1px solid #7f7d7a;
+    padding: 10px;
+    margin: 15px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+}
+.icon {
+    display: inline-block;
+    width: 20px;
+    margin-right: 20px;
+}
+.icon img {
+    width: 100%;
+}
+
+input[name="user_id"],
+input[name="user_pw"] {
+    width: 70%;
+    height: 100%;
+    border: none;
+}
+input[name="user_id"]:focus,
+input[name="user_pw"]:focus {
+    outline: none;
+}
+
+.btn {
+    background-color: #733232;
+    color: #fff;
+    width: 350px;
+    height: 50px;
+    margin: auto;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 15px;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.account {
+    color: #7f7d7a;
+    margin-top: 30px;
+    text-align: center;
+}
