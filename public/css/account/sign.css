@@ -1,6 +1,6 @@
 @font-face {
     font-family: "MyCustomFont";
-    src: url("../../fonts/ttf/OtomanopeeOne-Regular.ttf") format("truetype");
+    src: url("/fonts/ttf/OtomanopeeOne-Regular.ttf") format("truetype");
 }
 
 .sign {
