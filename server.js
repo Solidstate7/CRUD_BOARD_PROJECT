@@ -1,7 +1,9 @@
+require('dotenv').config()
+const { SERVER_PORT, NODE_ENV } = process.env
 const express = require('express')
 const app = express()
 const nunjucks = require('nunjucks')
-const { SERVER_PORT, NODE_ENV } = require('dotenv')
+
 const router = require('./src/index.route')
 const pool = require('./lib/poolPromise')
 const cookieParser = require('cookie-parser')
