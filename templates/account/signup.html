@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign Up</title>
+        <link type="text/css" rel="stylesheet" href="/css/index.css" />
+        <link type="text/css" rel="stylesheet" href="/css/account/index.css" />
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html"><img src="/images/logo.png" /></a>
+                </div>
+                <div class="nav">
+                    <a href="/boards/notice">NOTICE</a>
+                    <a href="/boards/list">BOARD</a>
+                    <a href="/accounts/mypage">MY PAGE</a>
+                    <a href="/accounts/signin">SIGN IN</a>
+                </div>
+            </div>
+            <div class="wapper">
+                <div class="sign">
+                    <h2>SIGN UP TO BOARD</h2>
+                    <div class="box">
+                        <form action="/accounts/signup" method="post">
+                            <ul>
+                                <li>
+                                    <span class="icon">
+                                        <img src="/images/id.png" />
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        name="user_id"
+                                        placeholder="아이디"
+                                    />
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <img src="/images/pw.png" />
+                                    </span>
+                                    <input
+                                        type="password"
+                                        name="user_pw"
+                                        placeholder="비밀번호"
+                                    />
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <img src="/images/mail.png" />
+                                    </span>
+                                    <input
+                                        type="email"
+                                        name="user_email"
+                                        placeholder="이메일"
+                                    />
+                                </li>
+                                <span class="text">
+                                    * 아이디, 비밀번호는 필수사항입니다.
+                                </span>
+                                <li>
+                                    <span class="icon">
+                                        <img src="/images/id.png" />
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        name="user_name"
+                                        placeholder="이름"
+                                    />
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <img src="/images/day.png" />
+                                    </span>
+                                    <input
+                                        type="number"
+                                        name="user_birthdate"
+                                        placeholder="생년월일 8자리"
+                                    />
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <img src="/images/phone.png" />
+                                    </span>
+                                    <input
+                                        type="number"
+                                        name="user_phone"
+                                        placeholder="휴대전화번호"
+                                    />
+                                </li>
+                            </ul>
+                            <button class="btn" type="submit">SIGN UP</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a
+                    href="https://github.com/Solidstate7/CRUD_BOARD_PROJECT"
+                    target="_blank"
+                >
+                    <img src="/images/git.png" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

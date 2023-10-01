@@ -3,10 +3,10 @@
     src: url("../../fonts/ttf/OtomanopeeOne-Regular.ttf") format("truetype");
 }
 
-.signin {
+.sign {
     position: absolute;
     left: 550px;
-    top: 200px;
+    top: 250px;
     width: 451px;
     height: auto;
 }
@@ -47,14 +47,27 @@ ul li {
 }
 
 input[name="user_id"],
-input[name="user_pw"] {
+input[name="user_pw"],
+input[name="user_name"],
+input[name="user_email"],
+input[name="user_birthdate"],
+input[name="user_phone"] {
     width: 70%;
     height: 100%;
     border: none;
 }
 input[name="user_id"]:focus,
-input[name="user_pw"]:focus {
+input[name="user_pw"]:focus,
+input[name="user_name"]:focus,
+input[name="user_email"]:focus,
+input[name="user_birthdate"]:focus,
+input[name="user_phone"]:focus {
     outline: none;
+}
+
+.text {
+    margin-left: 30px;
+    color: #7f7d7a;
 }
 
 .btn {
