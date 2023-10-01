@@ -1,5 +1,5 @@
 const JWT = require('../../lib/jwt')
-const accountRepo = require('../account/account.repo')
+const database = require('../../lib/database')
 const jwt = new JWT()
 
 exports.auth = async(req, res, next) => {
@@ -12,7 +12,7 @@ exports.auth = async(req, res, next) => {
         // console.log('middleware.auth payload: ', payload);
         if(!payload) return res.status(401).send('Invalid Token')
 
-        const user = await accountRepo.searchAccount(payload)
+        const user = await database.searchAccount.execute(payload)
         req.user = user
 
         next()
