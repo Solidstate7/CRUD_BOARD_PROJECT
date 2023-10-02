@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>View</title>
+        <link type="text/css" rel="stylesheet" href="/css/index.css" />
+        <link type="text/css" rel="stylesheet" href="/css/board/view.css" />
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <a href="/"><img src="/images/logo.png" /></a>
+                </div>
+                <div class="nav">
+                    <a href="/boards/notice">NOTICE</a>
+                    <a href="/boards/list">BOARD</a>
+                    <a href="/accounts/mypage">MY PAGE</a>
+                    <a href="/accounts/signin">SIGN IN</a>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="viewbox">
+                    <div class="firstLine">
+                        <div class="category">시설장비</div>
+                        <h2>에너지드링크 냉장고 만들어주세요</h2>
+                    </div>
+                    <div class="secondLine">
+                        <p>뻐꾸기 &nbsp; | &nbsp; 23-10-01</p>
+                        <p>조회수 1000</p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="thirdLine"></div>
+                    <div class="btnbox">
+                        <div class="tolist">
+                            <a href="/boards/list">목록</a>
+                        </div>
+                        <div class="tomodify">
+                            <a href="/boards/modify?id={{id}}">수정</a>
+                        </div>
+                        <form method="post" action="/boards/delete?id={{id}}">
+                            <button type="submit" class="todelete">삭제</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a
+                    href="https://github.com/Solidstate7/CRUD_BOARD_PROJECT"
+                    target="_blank"
+                >
+                    <img src="/images/git.png" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

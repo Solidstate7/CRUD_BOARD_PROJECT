@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Write</title>
+        <link type="text/css" rel="stylesheet" href="/css/index.css" />
+        <link type="text/css" rel="stylesheet" href="/css/board/write.css" />
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <a href="/"><img src="/images/logo.png" /></a>
+                </div>
+                <div class="nav">
+                    <a href="/boards/notice">NOTICE</a>
+                    <a href="/boards/list">BOARD</a>
+                    <a href="/accounts/mypage">MY PAGE</a>
+                    <a href="/accounts/signin">SIGN IN</a>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="formbox">
+                    <form action="/boards/write" method="post">
+                        <div class="firstLine">
+                            <select name="category">
+                                <option disabled selected>선택하세요</option>
+                                <option value="1">훈련내용</option>
+                                <option value="2">훈련방법</option>
+                                <option value="3">훈련교사</option>
+                                <option value="4">시설장비</option>
+                                <option value="5">행정서비스</option>
+                                <option value="6">취업지원</option>
+                            </select>
+                            <input
+                                type="text"
+                                name="author"
+                                placeholder="작성자"
+                            />
+                        </div>
+                        <div class="secondLine">
+                            <input
+                                type="text"
+                                name="title"
+                                placeholder="제목을 입력해주세요"
+                            />
+                        </div>
+                        <div class="line"></div>
+                        <div class="thirdLine">
+                            <textarea name="content"></textarea>
+                        </div>
+                        <div class="btnbox">
+                            <div class="tolist">
+                                <a href="/boards/list">RETURN TO LIST</a>
+                            </div>
+                            <button type="submit" class="topost">POST</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+                <a
+                    href="https://github.com/Solidstate7/CRUD_BOARD_PROJECT"
+                    target="_blank"
+                >
+                    <img src="/images/git.png" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

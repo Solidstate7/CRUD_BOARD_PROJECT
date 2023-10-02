@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Board</title>
+        <link type="text/css" rel="stylesheet" href="/css/index.css" />
+        <link type="text/css" rel="stylesheet" href="/css/board/list.css" />
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <a href="/"><img src="/images/logo.png" /></a>
+                </div>
+                <div class="nav">
+                    <a href="/boards/notice">NOTICE</a>
+                    <a href="/boards/list">BOARD</a>
+                    <a href="/accounts/mypage">MY PAGE</a>
+                    <a href="/accounts/signin">SIGN IN</a>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="boardContent">
+                    <div class="boardTitle">건의게시판</div>
+                    <table class="boardTable">
+                        <colgroup>
+                            <col class="number" />
+                            <col class="category" />
+                            <col class="title" />
+                            <col class="author" />
+                            <col class="date" />
+                            <col class="hit" />
+                        </colgroup>
+                        <thead>
+                            <tr class="listth">
+                                <th>No.</th>
+                                <th>Category</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Date</th>
+                                <th>Hit</th>
+                            </tr>
+                        </thead>
+
+                        <!-- {% for data in list %}
+                        <tr>
+                            <td>{{data.id}}</td>
+                            <td>{{data.category}}</td>
+                            <td>
+                                <a href="/boards/view?id={{data.id}}">
+                                    {{data.title}}
+                                </a>
+                            </td>
+                            <td>{{data.author}}</td>
+                            <td>{{data.date}}</td>
+                            <td>{{data.hit}}</td>
+                        </tr>
+                        {% endfor %} -->
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>시설장비</td>
+                                <td>에너지드링크 냉장고 만들어주세요</td>
+                                <td>뻐꾸기</td>
+                                <td>23-10-01</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>행정서비스</td>
+                                <td>훈련장려금 지급 날짜</td>
+                                <td>뻐꾸기</td>
+                                <td>23-10-01</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>시설장비</td>
+                                <td>5층 화장실 불편해요</td>
+                                <td>펭귄</td>
+                                <td>23-10-01</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>시설장비</td>
+                                <td>5층 화장실 불편해요!!</td>
+                                <td>펭귄</td>
+                                <td>23-10-01</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>시설장비</td>
+                                <td>5층 화장실 불편해요</td>
+                                <td>펭귄</td>
+                                <td>23-10-01</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>시설장비</td>
+                                <td>5층 화장실 불편해요</td>
+                                <td>펭귄</td>
+                                <td>23-10-01</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>시설장비</td>
+                                <td>5층 화장실 불편해요</td>
+                                <td>펭귄</td>
+                                <td>23-10-01</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>시설장비</td>
+                                <td>5층 화장실 불편해요</td>
+                                <td>펭귄</td>
+                                <td>23-10-01</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>시설장비</td>
+                                <td>5층 화장실 불편해요</td>
+                                <td>펭귄</td>
+                                <td>23-10-01</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>시설장비</td>
+                                <td>5층 화장실 불편해요</td>
+                                <td>펭귄</td>
+                                <td>23-10-01</td>
+                                <td>10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <div class="page">1</div>
+                        <div class="page">2</div>
+                        <div class="page">></div>
+                    </div>
+                    <div class="boardSide">
+                        <div class="boardSearch">
+                            <form class="search" action="" method="">
+                                <select name="category">
+                                    <option value="" disabled selected>
+                                        선택하세요
+                                    </option>
+                                    <option value="1">훈련내용</option>
+                                    <option value="2">훈련방법</option>
+                                    <option value="3">훈련교사</option>
+                                    <option value="4">시설장비</option>
+                                    <option value="5">행정서비스</option>
+                                    <option value="6">취업지원</option>
+                                </select>
+                                <input
+                                    type="text"
+                                    name="search_input"
+                                    placeholder="검색어를 입력하세요"
+                                />
+                                <button type="submit" class="searchbtn">
+                                    SEARCH
+                                </button>
+                            </form>
+                        </div>
+                        <div class="boardwrite">
+                            <a href="/boards/write">POST</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a
+                    href="https://github.com/Solidstate7/CRUD_BOARD_PROJECT"
+                    target="_blank"
+                >
+                    <img src="/images/git.png" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
