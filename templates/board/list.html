@@ -27,17 +27,17 @@
                         <colgroup>
                             <col class="number" />
                             <col class="category" />
-                            <col class="subject" />
-                            <col class="wirte" />
+                            <col class="title" />
+                            <col class="author" />
                             <col class="date" />
                             <col class="hit" />
                         </colgroup>
                         <thead>
-                            <tr>
+                            <tr class="listth">
                                 <th>No.</th>
                                 <th>Category</th>
-                                <th>Subject</th>
-                                <th>Write</th>
+                                <th>Title</th>
+                                <th>Author</th>
                                 <th>Date</th>
                                 <th>Hit</th>
                             </tr>
@@ -49,11 +49,11 @@
                             <td>{{data.category}}</td>
                             <td>
                                 <a href="/boards/view?id={{data.id}}">
-                                    {{data.subject}}
+                                    {{data.title}}
                                 </a>
                             </td>
-                            <td>{{data.writer}}</td>
-                            <td>{{data.created_at}}</td>
+                            <td>{{data.author}}</td>
+                            <td>{{data.date}}</td>
                             <td>{{data.hit}}</td>
                         </tr>
                         {% endfor %} -->
@@ -147,8 +147,11 @@
                     </div>
                     <div class="boardSide">
                         <div class="boardSearch">
-                            <form class="search">
+                            <form class="search" action="" method="">
                                 <select name="category">
+                                    <option value="" disabled selected>
+                                        선택하세요
+                                    </option>
                                     <option value="1">훈련내용</option>
                                     <option value="2">훈련방법</option>
                                     <option value="3">훈련교사</option>
@@ -167,7 +170,7 @@
                             </form>
                         </div>
                         <div class="boardwrite">
-                            <a href="/boards/wirte">POST</a>
+                            <a href="/boards/write">POST</a>
                         </div>
                     </div>
                 </div>

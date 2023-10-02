@@ -1,0 +1,92 @@
+.formbox {
+    width: 80%;
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    height: 650px;
+}
+.firstLine {
+    margin-top: 20px;
+}
+
+select[name="category"] {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 130px;
+    margin-left: 20px;
+}
+
+input[name="author"] {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 250px;
+    margin-left: 20px;
+}
+.secondLine {
+    border: 1px solid #747373;
+    width: 95%;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+input[name="title"] {
+    font-size: 14px;
+    padding: 10px 15px;
+
+    border: none;
+}
+input[name="title"]:focus,
+textarea[name="content"]:focus {
+    outline: none;
+}
+
+.line {
+    width: 95%;
+    border-bottom: 1px solid #747373;
+    margin: 15px 0 15px 20px;
+}
+
+.thirdLine {
+    border: 1px solid #747373;
+    width: 95%;
+    margin-left: 20px;
+}
+
+.thirdLine > textarea {
+    min-height: 400px;
+    min-width: 1150px;
+    resize: none;
+    border: none;
+    padding: 10px 15px;
+}
+
+.btnbox {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 30px 20px;
+}
+
+.tolist {
+    background-color: #733232;
+    font-size: 1.1rem;
+    width: 180px;
+    height: 35px;
+    border-radius: 30px;
+    text-align: center;
+}
+.tolist a {
+    color: white;
+    line-height: 30px;
+}
+
+.topost {
+    border: none;
+    background-color: #733232;
+    font-size: 1.1rem;
+    width: 100px;
+    height: 35px;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}

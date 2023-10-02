@@ -1,0 +1,79 @@
+.viewbox {
+    width: 80%;
+    position: absolute;
+    top: 180px;
+    left: 150px;
+    height: 650px;
+}
+
+.firstLine {
+    width: 90%;
+    margin: 50px 0 20px 50px;
+    color: #747373;
+    display: flex;
+}
+.category {
+    width: 100px;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    border: 1px solid #747373;
+    text-align: center;
+}
+
+.secondLine {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    font-size: 1.1rem;
+    color: #747373;
+}
+.line {
+    width: 91%;
+    border-bottom: 1px solid #747373;
+    margin: 15px 0 20px 50px;
+}
+
+.thirdLine {
+    width: 1100px;
+    height: 400px;
+    /* content가 들어오면 border 삭제 */
+    border: 1px solid #747373;
+    margin-left: 50px;
+}
+
+.btnbox {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 30px 20px;
+    gap: 30px;
+}
+
+.tolist,
+.tomodify {
+    background-color: #733232;
+    font-size: 1.1rem;
+    width: 100px;
+    height: 35px;
+    border-radius: 30px;
+    text-align: center;
+}
+.tolist a,
+.tomodify a {
+    color: white;
+    line-height: 30px;
+}
+
+.todelete {
+    border: none;
+    background-color: #733232;
+    font-size: 1.1rem;
+    width: 100px;
+    height: 35px;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}

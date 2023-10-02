@@ -22,22 +22,25 @@
             </div>
             <div class="wrapper">
                 <div class="boardContent">
-                    <div class="boardTitle">공지사항</div>
+                    <div class="boardTitle">
+                        <div><img src="/images/notice.png" /></div>
+                        &nbsp;공지사항
+                    </div>
                     <table class="boardTable">
                         <colgroup>
                             <col class="number" />
                             <col class="category" />
-                            <col class="subject" />
-                            <col class="wirte" />
+                            <col class="title" />
+                            <col class="author" />
                             <col class="date" />
                             <col class="hit" />
                         </colgroup>
                         <thead>
-                            <tr>
+                            <tr class="noticeth">
                                 <th>No.</th>
                                 <th>Category</th>
-                                <th>Subject</th>
-                                <th>Write</th>
+                                <th>Title</th>
+                                <th>Author</th>
                                 <th>Date</th>
                                 <th>Hit</th>
                             </tr>
@@ -49,11 +52,11 @@
                             <td>{{data.category}}</td>
                             <td>
                                 <a href="/boards/view?id={{data.id}}">
-                                    {{data.subject}}
+                                    {{data.title}}
                                 </a>
                             </td>
-                            <td>{{data.writer}}</td>
-                            <td>{{data.created_at}}</td>
+                            <td>{{data.author}}</td>
+                            <td>{{data.date}}</td>
                             <td>{{data.hit}}</td>
                         </tr>
                         {% endfor %} -->
@@ -167,7 +170,7 @@
                             </form>
                         </div>
                         <div class="boardwrite">
-                            <a href="/boards/wirte">POST</a>
+                            <a href="/boards/write">POST</a>
                         </div>
                     </div>
                 </div>

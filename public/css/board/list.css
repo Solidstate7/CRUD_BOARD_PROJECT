@@ -13,6 +13,17 @@
     font-size: 1.5rem;
     margin: auto;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boardTitle > div {
+    width: 20px;
+    height: 25px;
+}
+
+.boardTitle > div > img {
+    width: 100%;
 }
 
 .boardTable {
@@ -49,10 +60,10 @@ col.number {
 col.category {
     width: 12%;
 }
-col.subject {
+col.title {
     width: 48%;
 }
-col.write {
+col.author {
     width: 12%;
 }
 col.date {
@@ -103,7 +114,7 @@ col.hit {
 select[name="category"] {
     font-size: 14px;
     padding: 10px 15px;
-    width: 120px;
+    width: 130px;
 }
 
 input[name="search_input"] {
@@ -126,4 +137,14 @@ input[name="search_input"]:focus {
     text-align: center;
     color: white;
     cursor: pointer;
+}
+
+.noticeth {
+    background-color: #402721;
+    color: white;
+}
+
+.listth {
+    background-color: #a67968;
+    color: white;
 }
