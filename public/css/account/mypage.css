@@ -1,0 +1,69 @@
+.mypage {
+    position: absolute;
+    left: 480px;
+    top: 200px;
+    width: 570px;
+}
+
+h2 {
+    color: #733232;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "title", sans-serif;
+}
+
+.profile {
+    background-color: #733232;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+.profile img {
+    padding: 30px;
+    width: 100%;
+}
+
+.user_id {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.infobox {
+    background-color: #d9d9d9;
+    height: 330px;
+    border-radius: 20px;
+    padding: 7px 14px;
+}
+
+.info {
+    display: flex;
+    margin: 10px 0 10px 50px;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.1rem;
+    background-color: white;
+    width: 450px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.info > div {
+    width: 30px;
+    height: 27px;
+    margin-left: 10px;
+}
+
+.info > div > img {
+    width: 100%;
+}
+
+.deleteaccount {
+    color: #7f7d7a;
+    margin-top: 15px;
+    text-align: center;
+    cursor: pointer;
+}

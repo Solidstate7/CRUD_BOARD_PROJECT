@@ -26,3 +26,7 @@ exports.postSignin = async (req, res, next) => {
 exports.getSignup = (req, res) => {
     res.render("account/signup.html");
 };
+
+exports.getMypage = (req, res) => {
+    res.render("account/mypage.html");
+};
