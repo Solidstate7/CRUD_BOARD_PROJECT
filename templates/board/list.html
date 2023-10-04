@@ -43,102 +43,22 @@
                             </tr>
                         </thead>
 
-                        <!-- {% for data in list %}
-                        <tr>
-                            <td>{{data.id}}</td>
-                            <td>{{data.category}}</td>
-                            <td>
-                                <a href="/boards/view?id={{data.id}}">
-                                    {{data.title}}
-                                </a>
-                            </td>
-                            <td>{{data.author}}</td>
-                            <td>{{data.date}}</td>
-                            <td>{{data.hit}}</td>
-                        </tr>
-                        {% endfor %} -->
+                        {% for data in list %}
                         <tbody>
                             <tr>
-                                <td>10</td>
-                                <td>시설장비</td>
-                                <td>에너지드링크 냉장고 만들어주세요</td>
-                                <td>뻐꾸기</td>
-                                <td>23-10-01</td>
-                                <td>1000</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>행정서비스</td>
-                                <td>훈련장려금 지급 날짜</td>
-                                <td>뻐꾸기</td>
-                                <td>23-10-01</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>시설장비</td>
-                                <td>5층 화장실 불편해요</td>
-                                <td>펭귄</td>
-                                <td>23-10-01</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>시설장비</td>
-                                <td>5층 화장실 불편해요!!</td>
-                                <td>펭귄</td>
-                                <td>23-10-01</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>시설장비</td>
-                                <td>5층 화장실 불편해요</td>
-                                <td>펭귄</td>
-                                <td>23-10-01</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>시설장비</td>
-                                <td>5층 화장실 불편해요</td>
-                                <td>펭귄</td>
-                                <td>23-10-01</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>시설장비</td>
-                                <td>5층 화장실 불편해요</td>
-                                <td>펭귄</td>
-                                <td>23-10-01</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>시설장비</td>
-                                <td>5층 화장실 불편해요</td>
-                                <td>펭귄</td>
-                                <td>23-10-01</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>시설장비</td>
-                                <td>5층 화장실 불편해요</td>
-                                <td>펭귄</td>
-                                <td>23-10-01</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>시설장비</td>
-                                <td>5층 화장실 불편해요</td>
-                                <td>펭귄</td>
-                                <td>23-10-01</td>
-                                <td>10</td>
+                                <td>{{data.id}}</td>
+                                <td>{{data.category}}</td>
+                                <td>
+                                    <a href="/boards/view?id={{data.id}}">
+                                        {{data.title}}
+                                    </a>
+                                </td>
+                                <td>{{data.author}}</td>
+                                <td>{{data.date}}</td>
+                                <td>{{data.hit}}</td>
                             </tr>
                         </tbody>
+                        {% endfor %}
                     </table>
                     <div class="pagination">
                         <div class="page">1</div>
