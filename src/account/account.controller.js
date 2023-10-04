@@ -37,7 +37,7 @@ exports.postSignin = async (req, res, next) => {
         res.cookie("token", result.data);
         res.redirect("/");
     } catch (e) {
-        next(e);
+        next (e);
     }
 };
 
@@ -46,13 +46,24 @@ exports.getSignout = (req, res) => {
     res.redirect("/");
 };
 
+exports.getMypage = async (req, res, next) => {
+    try {
+        if (!req.user) return res.redirect('/accounts/signin')
+        const account = await accountService.specifyUser(req.user)
+        if(!account) return res.status(401).send(`This user doesn't exist`)
+        res.render('account/mypage.html', {...account})    
+    } catch (e) {
+        next (e)
+    }
+};
+
 // Update
 
 exports.getEdit = async (req, res) => {
 
-    const account = await accountService.signin(req.user)
+    const account = await accountService.specifyUser(req.user)
     if(!account) return res.status(401).send(`This user doesn't exist`)
-    res.render('account/mypage_modify.html', {...result})
+    res.render('account/mypage_modify.html', {...account})
 }
 
 exports.postEdit = async (req, res) => {
@@ -75,6 +86,4 @@ exports.postDelete = async (req, res) => {
     res.redirect("/");
 };
 
-exports.getMypage = (req, res) => {
-    res.render("account/mypage.html");
-};
+

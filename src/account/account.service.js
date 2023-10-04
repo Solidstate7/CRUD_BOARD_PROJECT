@@ -24,15 +24,15 @@ exports.signin = async (obj_input) => {
     }
 }
 
-// exports.specifyUser = async (cookies) => {
-//     try {
-//         const payload = jwt.verify(cookies)
-//         const result = await database.searchAccount.execute()
-//         return result
-//     } catch (e) {
-//         throw new Error('accountService Error ' + e.message)
-//     }
-// }
+exports.specifyUser = async (user_info) => {
+    try {
+        const result = await database.searchAccount.execute(user_info)
+        if (!result) return false
+        return result
+    } catch (e) {
+        throw new Error('accountService Error ' + e.message)
+    }
+}
 
 exports.edit = async (obj_input) => {
     try {
