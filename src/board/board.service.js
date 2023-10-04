@@ -1,9 +1,9 @@
 const database = require('../../lib/database')
 
 // List (Read) -> Select All
-exports.fetchAllBoards = async (obj_data) => {
+exports.fetchAllBoards = async () => {
     try {
-        const result = await database.listBoard.execute(obj_data)
+        const result = await database.listBoard.execute()
         return result
     } catch (e) {
         throw new Error('boardService Error: ' + e.message)
