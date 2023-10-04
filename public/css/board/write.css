@@ -52,7 +52,7 @@ textarea[name="content"]:focus {
 
 .thirdLine > textarea {
     min-height: 400px;
-    min-width: 1000px;
+    min-width: 800px;
     resize: none;
     border: none;
     padding: 10px 15px;
