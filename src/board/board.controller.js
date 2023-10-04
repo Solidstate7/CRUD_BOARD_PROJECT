@@ -9,6 +9,7 @@ exports.getList = async (req, res) => {
 };
 
 // Write
+
 exports.getWrite = (req, res) => {
     res.render("board/write.html");
 };

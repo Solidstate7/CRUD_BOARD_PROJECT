@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Page</title>
+        <link type="text/css" rel="stylesheet" href="/css/index.css" />
+        <link type="text/css" rel="stylesheet" href="/css/account/mypage.css" />
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <a href="/"><img src="/images/logo.png" /></a>
+                </div>
+                <div class="nav">
+                    <a href="/notice/list">NOTICE</a>
+                    <a href="/boards/list">BOARD</a>
+                    <a href="/accounts/mypage">MY PAGE</a>
+                    <a href="/accounts/signin">SIGN IN</a>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="mypage">
+                    <h2>My-Profile</h2>
+                    <div class="profile">
+                        <img src="/images/profile.png" />
+                    </div>
+                    <div class="user_id">@guniee</div>
+                    <div class="infobox">
+                        <form action="/accounts/modify" method="post">
+                            <div class="info">
+                                <div>
+                                    <img src="/images/id.png" />
+                                </div>
+                                <span>
+                                    <input
+                                        type="text"
+                                        name="user_name"
+                                        value="{{}}"
+                                    />
+                                </span>
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="/images/pw.png" />
+                                </div>
+                                <span>
+                                    <input
+                                        type="password"
+                                        name="user_pw"
+                                        value="{{}}"
+                                    />
+                                </span>
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="/images/mail.png" />
+                                </div>
+                                <span>
+                                    <input
+                                        type="email"
+                                        name="user_email"
+                                        value="{{}}"
+                                    />
+                                </span>
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="/images/day.png" />
+                                </div>
+                                <span>
+                                    <input
+                                        type="number"
+                                        name="user_birthdate"
+                                        value="{{}}"
+                                    />
+                                </span>
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="/images/phone.png" />
+                                </div>
+                                <span>
+                                    <input
+                                        type="number"
+                                        name="user_phone"
+                                        value="{{}}"
+                                    />
+                                </span>
+                            </div>
+                            <div class="btnbox">
+                                <button type="submit" class="tosave">
+                                    SAVE
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a
+                    href="https://github.com/Solidstate7/CRUD_BOARD_PROJECT"
+                    target="_blank"
+                >
+                    <img src="/images/git.png" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

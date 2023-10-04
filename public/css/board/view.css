@@ -1,16 +1,16 @@
 .viewbox {
-    width: 80%;
-    position: absolute;
-    top: 180px;
-    left: 150px;
+    width: 60%;
     height: 650px;
+    margin: auto;
+    /* border: 1px solid black; */
 }
 
 .firstLine {
-    width: 90%;
+    width: 100%;
     margin: 50px 0 20px 50px;
     color: #747373;
     display: flex;
+    /* margin: auto; */
 }
 .category {
     width: 100px;
@@ -21,7 +21,7 @@
 }
 
 .secondLine {
-    width: 90%;
+    width: 87%;
     display: flex;
     justify-content: space-between;
     margin-left: 50px;
@@ -29,13 +29,13 @@
     color: #747373;
 }
 .line {
-    width: 91%;
+    width: 88%;
     border-bottom: 1px solid #747373;
     margin: 15px 0 20px 50px;
 }
 
 .thirdLine {
-    width: 1100px;
+    width: 1000px;
     height: 400px;
     /* content가 들어오면 border 삭제 */
     border: 1px solid #747373;
