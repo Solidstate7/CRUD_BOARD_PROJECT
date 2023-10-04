@@ -35,7 +35,7 @@
 }
 
 .thirdLine {
-    width: 1000px;
+    width: 88%;
     height: 400px;
     /* content가 들어오면 border 삭제 */
     border: 1px solid #747373;
@@ -54,7 +54,6 @@
 .tolist,
 .tomodify {
     background-color: #733232;
-    font-size: 1.1rem;
     width: 100px;
     height: 35px;
     border-radius: 30px;
@@ -63,17 +62,16 @@
 .tolist a,
 .tomodify a {
     color: white;
-    line-height: 30px;
 }
 
 .todelete {
     border: none;
     background-color: #733232;
-    font-size: 1.1rem;
     width: 100px;
     height: 35px;
     border-radius: 30px;
     text-align: center;
     color: white;
     cursor: pointer;
+    line-height: 38px;
 }

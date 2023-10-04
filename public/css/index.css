@@ -8,6 +8,11 @@
     src: url("/fonts/ttf/OtomanopeeOne-Regular.ttf") format("truetype");
 }
 
+.font {
+    font-size: 1.1rem;
+    line-height: 35px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +21,7 @@
 
 a {
     text-decoration: none;
-    color: #3333;
+    color: #333;
 }
 
 .main {

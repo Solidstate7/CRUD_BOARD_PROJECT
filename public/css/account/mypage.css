@@ -72,7 +72,7 @@ h2 {
 .tolist,
 .tomodify {
     background-color: #733232;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     width: 150px;
     height: 35px;
     border-radius: 30px;
@@ -81,13 +81,13 @@ h2 {
 .tolist a,
 .tomodify a {
     color: white;
-    line-height: 30px;
+    /* line-height: 35px; */
 }
 
 .todelete {
     border: none;
     background-color: #733232;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     width: 170px;
     height: 35px;
     border-radius: 30px;
