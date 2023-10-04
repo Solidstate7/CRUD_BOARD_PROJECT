@@ -1,41 +1,42 @@
 const database = require('../../lib/database')
-const JWT = require('../../lib/jwt')
-const jwt = new JWT()
+const jwt = require('../../lib/jwt')
 
-exports.signup = async (user_id, user_pw) => {
+exports.signup = async (obj_input) => {
     try {
-        console.log('Under construction');
+        const result = await database.createAccount.execute(obj_input)
+        return result
     } catch (e) {
         throw new Error('accountService Error ' + e.message)
     }
 }
 
-exports.signin = async (obj_data) => {
+exports.signin = async (obj_input) => {
     try {
-
-    const result = await database.searchAccount.execute(obj_data)
-    if (!result) return { isSignin: false, data: null }
+        const result = await database.searchAccount.execute(obj_input)
+        if (!result) return { isSignin: false, data: null }
+        
         console.log(result)
-    const token = jwt.sign( { user_id: result.user_id }, 'salt' )
-    return { isSignin: true, data: token }
-
-
+        
+        const token = jwt.sign( { user_id: result.user_id }, 'salt' )
+        return { isSignin: true, data: token }
     } catch (e) {
         throw new Error('accountService Error ' + e.message)
     }
 }
 
-exports.edit = async (user_pw) => {
+exports.edit = async (obj_input) => {
     try {
-    console.log('Under construction');
+        const result = await database.updateAccount.execute(obj_input)
+        return result
     } catch (e) {
         throw new Error('accountService Error ' + e.message)
     }
 }
 
-exports.delete = async (user_pw) => {
+exports.delete = async (obj_input) => {
     try {
-    console.log('Under construction');
+        const result = await database.deleteAccount.execute(obj_input)
+        return result
     } catch (e) {
         throw new Error('accountService Error ' + e.message)
     }
