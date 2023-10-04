@@ -32,6 +32,7 @@
                                     </span>
 
                                     <input
+                                        required
                                         type="text"
                                         name="user_id"
                                         placeholder="아이디"
@@ -42,6 +43,7 @@
                                         <img src="/images/pw.png" />
                                     </span>
                                     <input
+                                        required
                                         type="password"
                                         name="user_pw"
                                         placeholder="비밀번호"
@@ -52,6 +54,7 @@
                                         <img src="/images/mail.png" />
                                     </span>
                                     <input
+                                        required
                                         type="email"
                                         name="user_email"
                                         placeholder="이메일"
@@ -66,6 +69,7 @@
                                     </span>
 
                                     <input
+                                        required
                                         type="text"
                                         name="user_name"
                                         placeholder="이름"
@@ -76,9 +80,11 @@
                                         <img src="/images/day.png" />
                                     </span>
                                     <input
+                                        required
                                         type="number"
                                         name="user_birthdate"
-                                        placeholder="생년월일 8자리"
+                                        maxlength="6"
+                                        placeholder="생년월일 6자리"
                                     />
                                 </li>
                                 <li>
@@ -86,6 +92,7 @@
                                         <img src="/images/phone.png" />
                                     </span>
                                     <input
+                                        required
                                         type="number"
                                         name="user_phone"
                                         placeholder="휴대전화번호"
