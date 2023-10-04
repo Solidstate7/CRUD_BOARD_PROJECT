@@ -1,9 +1,13 @@
 .sign {
-    position: absolute;
-    left: 550px;
-    top: 250px;
+    margin: auto;
     width: 451px;
-    height: auto;
+    margin-top: 150px;
+}
+
+.sign.up {
+    margin: auto;
+    width: 451px;
+    margin-top: 50px;
 }
 
 h2 {

@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>View</title>
         <link type="text/css" rel="stylesheet" href="/css/index.css" />
+        <link type="text/css" rel="stylesheet" href="/css/board/view.css" />
     </head>
     <body>
         <div class="main">
@@ -20,25 +21,28 @@
                 </div>
             </div>
             <div class="wrapper">
-                <div class="slideBox">
-                    <div class="slide">
-                        <img src="/images/slide1.png" />
+                <div class="viewbox">
+                    <div class="firstLine">
+                        <div class="category">시설장비</div>
+                        <h2>에너지드링크 냉장고 만들어주세요</h2>
                     </div>
-                    <div class="slide">
-                        <img src="/images/slide2.png" />
+                    <div class="secondLine">
+                        <p>뻐꾸기 &nbsp; | &nbsp; 23-10-01</p>
+                        <p>조회수 1000</p>
                     </div>
-                    <div class="slide">
-                        <img src="/images/slide3.png" />
+                    <div class="line"></div>
+                    <div class="thirdLine"></div>
+                    <div class="btnbox">
+                        <div class="tolist">
+                            <a href="/notice/list">목록</a>
+                        </div>
+                        <div class="tomodify">
+                            <a href="/notice/modify?id={{id}}">수정</a>
+                        </div>
+                        <form method="post" action="/notice/delete?id={{id}}">
+                            <button type="submit" class="todelete">삭제</button>
+                        </form>
                     </div>
-                    <div class="slide">
-                        <img src="/images/slide4.png" />
-                    </div>
-                </div>
-                <div class="slideController">
-                    <div class="ellipse active"></div>
-                    <div class="ellipse"></div>
-                    <div class="ellipse"></div>
-                    <div class="ellipse"></div>
                 </div>
             </div>
             <div class="footer">
@@ -50,6 +54,5 @@
                 </a>
             </div>
         </div>
-        <script type="text/javascript" src="/js/slide.js"></script>
     </body>
 </html>
