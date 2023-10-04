@@ -39,7 +39,7 @@ exports.postSignin = async (req, res, next) => {
         res.cookie("token", result.data);
         res.redirect("/");
     } catch (e) {
-        next (e);
+        next(e);
     }
 };
 
@@ -63,14 +63,14 @@ exports.getMypage = async (req, res, next) => {
 
 exports.getEdit = async (req, res) => {
     const account = await accountService.specifyUser(req.user);
-    if(!account) return res.status(401).send(`This user doesn't exist`);
-    res.render('account/mypage_modify.html', {...account});
-}
+    if (!account) return res.status(401).send(`This user doesn't exist`);
+    res.render("account/mypage_modify.html", {...account});
+};
 
 exports.postEdit = async (req, res) => {
     const updated = await accountService.edit(req.body, req.user);
     if (!updated) return res.status(401).send(`No change or cannot update this user.`);
-    res.redirect('/accounts/mypage')
+    res.redirect('/accounts/mypage');
 };
 
 // Delete

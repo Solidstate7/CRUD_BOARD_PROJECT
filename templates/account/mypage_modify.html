@@ -17,7 +17,11 @@
                     <a href="/notice/list">NOTICE</a>
                     <a href="/boards/list">BOARD</a>
                     <a href="/accounts/mypage">MY PAGE</a>
+                    {% if user%}
+                    <a href="/accounts/signout">SIGN OUT</a>
+                    {% else %}
                     <a href="/accounts/signin">SIGN IN</a>
+                    {% endif %}
                 </div>
             </div>
             <div class="wrapper">
@@ -27,7 +31,7 @@
                         <img src="/images/profile.png" />
                     </div>
                     <div class="user_id">{{user_id}}</div>
-                    <div class="infobox">
+                    <div class="infobox modify">
                         <form action="/accounts/modify" method="post">
                             <input type="hidden" name="user_id" value="{{user_id}}">
                             <div class="info">

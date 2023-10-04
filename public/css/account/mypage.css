@@ -117,9 +117,14 @@ input[name="user_phone"]:focus {
     border: none;
     background-color: #733232;
     font-size: 1.1rem;
-    width: 170px;
+    width: 100px;
     height: 35px;
     border-radius: 30px;
     text-align: center;
     color: white;
+    margin-top: 20px;
+}
+
+.modify {
+    height: 300px;
 }
