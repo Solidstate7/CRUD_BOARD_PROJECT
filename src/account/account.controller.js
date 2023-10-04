@@ -62,3 +62,8 @@ exports.postDelete = async (req, res) => {
     res.clearCookie('token')
     res.redirect('/')
 }
+
+exports.getMypage = (req, res) => {
+    res.render("account/mypage.html");
+};
+
