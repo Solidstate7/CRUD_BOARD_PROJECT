@@ -33,6 +33,7 @@
                     <div class="user_id">{{user_id}}</div>
                     <div class="infobox modify">
                         <form action="/accounts/modify" method="post">
+                            <input type="hidden" name="user_id" value="{{user_id}}">
                             <div class="info">
                                 <div>
                                     <img src="/images/id.png" />
