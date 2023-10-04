@@ -17,12 +17,22 @@ exports.signin = async (obj_input) => {
         
         console.log(result)
         
-        const token = jwt.sign( { user_id: result.user_id }, 'salt' )
+        const token = jwt.sign( { user_id: result.user_id, lvl: result.lvl }, 'salt' )
         return { isSignin: true, data: token }
     } catch (e) {
         throw new Error('accountService Error ' + e.message)
     }
 }
+
+// exports.specifyUser = async (cookies) => {
+//     try {
+//         const payload = jwt.verify(cookies)
+//         const result = await database.searchAccount.execute()
+//         return result
+//     } catch (e) {
+//         throw new Error('accountService Error ' + e.message)
+//     }
+// }
 
 exports.edit = async (obj_input) => {
     try {

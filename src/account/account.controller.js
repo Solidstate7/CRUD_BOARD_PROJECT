@@ -43,9 +43,9 @@ exports.getSignout = (req, res) => {
 // Update
 
 exports.getEdit = async (req, res) => {
-    const result = await accountService.signin(req.body)
-    if(!result) return res.status(401).send(`This user doesn't exist`)
-    res.render('account/signup.html', {...result})
+    const account = await accountService.signin(req.user)
+    if(!account) return res.status(401).send(`This user doesn't exist`)
+    res.render('account/mypage_modify.html', {...result})
 }
 
 exports.postEdit = async (req, res) => {
