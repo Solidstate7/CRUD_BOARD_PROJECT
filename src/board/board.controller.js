@@ -5,7 +5,7 @@ const boardService = require('./board.service')
 // List
 exports.getList = async (req, res) => {
     const result = await boardService.fetchAllBoards()
-    res.render("board/list.html");
+    res.render("board/list.html", { list: result});
 };
 
 // Write
