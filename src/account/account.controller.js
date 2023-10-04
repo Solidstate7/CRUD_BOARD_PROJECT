@@ -9,13 +9,15 @@ exports.postSignup = async (req, res) => {
     try {
         const result = await accountService.signup(req.body);
 
-        if (!result) return res.status(401).send(`Cannot create an invalid account.`);
+        if (!result)
+            return res.status(401).send(`Cannot create an invalid account.`);
 
         const signResult = await accountService.signin(req.body);
-        
-        if (!signResult.isSignin) return res.status(401).send(`Invalid ID or Password.`);
-    
-        res.cookie("token", signResult.data);       
+
+        if (!signResult.isSignin)
+            return res.status(401).send(`Invalid ID or Password.`);
+
+        res.cookie("token", signResult.data);
         res.redirect("/");
     } catch (e) {
         next(e);
@@ -48,31 +50,28 @@ exports.getSignout = (req, res) => {
 
 exports.getMypage = async (req, res, next) => {
     try {
-        if (!req.user) return res.redirect('/accounts/signin')
-        const account = await accountService.specifyUser(req.user)
-        if(!account) return res.status(401).send(`This user doesn't exist`)
-        res.render('account/mypage.html', {...account})    
+        if (!req.user) return res.redirect("/accounts/signin");
+        const account = await accountService.specifyUser(req.user);
+        if (!account) return res.status(401).send(`This user doesn't exist`);
+        res.render("account/mypage.html", {...account});
     } catch (e) {
-        next (e)
+        next(e);
     }
 };
 
 // Update
 
 exports.getEdit = async (req, res) => {
-
-    const account = await accountService.specifyUser(req.user)
-    if(!account) return res.status(401).send(`This user doesn't exist`)
-    res.render('account/mypage_modify.html', {...account})
+    const account = await accountService.specifyUser(req.user);
+    if(!account) return res.status(401).send(`This user doesn't exist`);
+    res.render('account/mypage_modify.html', {...account});
 }
 
 exports.postEdit = async (req, res) => {
-
     const result = await accountService.edit(req.body);
     if (!result) return res.status(401).send(`This user doesn't exist`);
     res.render("account/mypage_modify.html", {...result});
 };
-
 
 // Delete
 
@@ -85,5 +84,3 @@ exports.postDelete = async (req, res) => {
     res.clearCookie("token");
     res.redirect("/");
 };
-
-
