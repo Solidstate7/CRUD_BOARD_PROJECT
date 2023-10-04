@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const accountRouter = require("./account/account.route");
 const boardRouter = require("./board/board.route");
+const noticeRouter = require('./notice/notice.route')
 
 router.get("/", (req, res) => {
     // console.log("INDEX ROUTER: ", req.user);
@@ -11,5 +12,7 @@ router.get("/", (req, res) => {
 router.use("/accounts", accountRouter);
 
 router.use("/boards", boardRouter);
+
+router.use("/notice", noticeRouter);
 
 module.exports = router;

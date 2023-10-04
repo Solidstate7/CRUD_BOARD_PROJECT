@@ -1,6 +1,5 @@
-const JWT = require('../../lib/jwt')
+const jwt = require('../../lib/jwt')
 const database = require('../../lib/database')
-const jwt = new JWT()
 
 exports.auth = async(req, res, next) => {
     try {
