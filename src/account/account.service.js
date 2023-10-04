@@ -33,9 +33,10 @@ exports.specifyUser = async (user_info) => {
         if (!result) return false;
         return result;
     } catch (e) {
-        throw new Error("accountService Error " + e.message);
+        throw new Error('accountService Error ' + e.message);
     }
 };
+
 
 exports.edit = async (obj_input) => {
     try {
