@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Notice</title>
         <link type="text/css" rel="stylesheet" href="/css/index.css" />
-        <link type="text/css" rel="stylesheet" href="/css/board/list.css" />
+        <link type="text/css" rel="stylesheet" href="/css/notice/list.css" />
     </head>
     <body>
         <div class="main">
@@ -14,7 +14,7 @@
                     <a href="/"><img src="/images/logo.png" /></a>
                 </div>
                 <div class="nav">
-                    <a href="/boards/notice">NOTICE</a>
+                    <a href="/notice/list">NOTICE</a>
                     <a href="/boards/list">BOARD</a>
                     <a href="/accounts/mypage">MY PAGE</a>
                     <a href="/accounts/signin">SIGN IN</a>
@@ -51,7 +51,7 @@
                             <td>{{data.id}}</td>
                             <td>{{data.category}}</td>
                             <td>
-                                <a href="/boards/view?id={{data.id}}">
+                                <a href="/notice/view?id={{data.id}}">
                                     {{data.title}}
                                 </a>
                             </td>
@@ -170,7 +170,7 @@
                             </form>
                         </div>
                         <div class="boardwrite">
-                            <a href="/boards/write">POST</a>
+                            <a href="/notice/write">POST</a>
                         </div>
                     </div>
                 </div>

@@ -71,22 +71,21 @@ a {
 
 .wrapper {
     width: 100%;
+    position: absolute;
+    left: 0;
+    top: 150px;
 }
 
 .slideBox {
-    width: 700px;
-    height: 350px;
-    position: absolute;
-    left: 450px;
-    top: 250px;
+    width: 850px;
+    height: 450px;
+    margin: 70px auto;
 }
 
 .slide {
     width: 100%;
     height: 350px;
-    position: absolute;
-    top: 0;
-    left: 100%;
+    margin: auto;
     transition: transform 0.5s ease;
     display: block;
 }
@@ -101,11 +100,9 @@ a {
 }
 
 .slideController {
-    position: absolute;
-    left: 692px;
-    top: 700px;
+    margin-top: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -143,3 +140,9 @@ a {
 .footer a img {
     width: 100%;
 }
+
+/* @media screen and (max-width: 1880px) {
+    .boardContent {
+        left: 350px;
+    }
+} */

@@ -1,8 +1,7 @@
 .mypage {
-    position: absolute;
-    left: 480px;
-    top: 200px;
+    margin: auto;
     width: 570px;
+    margin-top: 30px;
 }
 
 h2 {
