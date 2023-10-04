@@ -38,9 +38,9 @@ exports.specifyUser = async (user_info) => {
 };
 
 
-exports.edit = async (obj_input) => {
+exports.edit = async (fields, whereField) => {
     try {
-        const result = await database.updateAccount.execute(obj_input);
+        const result = await database.updateAccount.execute(fields, whereField);
         return result;
     } catch (e) {
         throw new Error("accountService Error " + e.message);

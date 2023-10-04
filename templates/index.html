@@ -16,8 +16,11 @@
                     <a href="/notice/list">NOTICE</a>
                     <a href="/boards/list">BOARD</a>
                     <a href="/accounts/mypage">MY PAGE</a>
+                    {% if user %}
+                    <a href="/accounts/signout">SIGN OUT</a>
+                    {% else %}
                     <a href="/accounts/signin">SIGN IN</a>
-                    <a href="/accounts/signout">Sign the fuck out</a>
+                    {% endif %}
                 </div>
             </div>
             <div class="wrapper">

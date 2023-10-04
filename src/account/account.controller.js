@@ -68,15 +68,15 @@ exports.getEdit = async (req, res) => {
 }
 
 exports.postEdit = async (req, res) => {
-    const result = await accountService.edit(req.body);
-    if (!result) return res.status(401).send(`This user doesn't exist`);
-    res.render("account/mypage_modify.html", {...result});
+    const updated = await accountService.edit(req.body, req.user);
+    if (!updated) return res.status(401).send(`No change or cannot update this user.`);
+    res.redirect('/accounts/mypage')
 };
 
 // Delete
 
 exports.postDelete = async (req, res) => {
-    const result = await accountService.delete(req.body);
+    const result = await accountService.delete(req.user);
 
     if (!result)
         return res.status(401).send(`Cannot delete a nonexistent user.`);
