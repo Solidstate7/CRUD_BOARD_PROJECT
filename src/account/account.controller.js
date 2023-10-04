@@ -9,9 +9,13 @@ exports.postSignup = async (req, res) => {
     try {
         const result = await accountService.signup(req.body);
 
-        if (!result)
-            return res.status(401).send(`Cannot create an invalid account.`);
+        if (!result) return res.status(401).send(`Cannot create an invalid account.`);
 
+        const signResult = await accountService.signin(req.body);
+        
+        if (!signResult.isSignin) return res.status(401).send(`Invalid ID or Password.`);
+    
+        res.cookie("token", signResult.data);       
         res.redirect("/");
     } catch (e) {
         next(e);
