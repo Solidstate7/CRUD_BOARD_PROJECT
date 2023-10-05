@@ -69,8 +69,8 @@ exports.getEdit = async (req, res) => {
 
 exports.postEdit = async (req, res) => {
     const updated = await accountService.edit(req.body, req.user);
-    if (!updated)
-        return res.status(401).send(`No change or cannot update this user.`);
+    // if (!updated)
+    //     return res.status(401).send(`No change or cannot update this user.`);
     res.redirect("/accounts/mypage");
 };
 
