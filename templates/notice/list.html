@@ -25,7 +25,7 @@
                     <a href="/boards/list">BOARD</a>
                     <a href="/accounts/mypage">MY PAGE</a>
                     {% if user%}
-                    <a href="/accounts/signout">SIGN OUT</a>
+                    <a href="/accounts/signout">LEVEL: {{user.lvl}} {{user.user_id}}님 <br /> SIGN OUT</a>
                     {% else %}
                     <a href="/accounts/signin">SIGN IN</a>
                     {% endif %}
@@ -113,7 +113,13 @@
                             </form>
                         </div>
                         <div class="boardwrite">
+                            {% if user.lvl == 1 %}
+                            <div class="boardwrite"><a href="#"></a></div>
+                            {% elif user.lvl == 2 %}
                             <a href="/notice/write">POST</a>
+                            {% else %}
+                            <a href="/notice/list">POST</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
