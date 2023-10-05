@@ -1,8 +1,7 @@
 .viewbox {
     width: 60%;
-    height: 650px;
+    height: auto;
     margin: auto;
-    /* border: 1px solid black; */
 }
 
 .firstLine {
@@ -13,11 +12,13 @@
     /* margin: auto; */
 }
 .category {
-    width: 100px;
+    width: 120px;
     font-size: 1.2rem;
     margin-right: 15px;
-    border: 1px solid #747373;
     text-align: center;
+    background-color: #d9ab9a;
+    color: #fff;
+    line-height: 35px;
 }
 
 .secondLine {
@@ -36,9 +37,7 @@
 
 .thirdLine {
     width: 88%;
-    height: 400px;
-    /* content가 들어오면 border 삭제 */
-    border: 1px solid #747373;
+    height: 380px;
     margin-left: 50px;
 }
 
