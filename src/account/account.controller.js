@@ -53,7 +53,7 @@ exports.getMypage = async (req, res, next) => {
         if (!req.user) return res.redirect("/accounts/signin");
         const account = await accountService.specifyUser(req.user);
         if (!account) return res.status(401).send(`This user doesn't exist`);
-        res.render("account/mypage.html", {...account});
+        res.render("account/mypage.html", {...account, user: req.user});
     } catch (e) {
         next(e);
     }
@@ -69,8 +69,9 @@ exports.getEdit = async (req, res) => {
 
 exports.postEdit = async (req, res) => {
     const updated = await accountService.edit(req.body, req.user);
-    if (!updated) return res.status(401).send(`No change or cannot update this user.`);
-    res.redirect('/accounts/mypage');
+    if (!updated)
+        return res.status(401).send(`No change or cannot update this user.`);
+    res.redirect("/accounts/mypage");
 };
 
 // Delete

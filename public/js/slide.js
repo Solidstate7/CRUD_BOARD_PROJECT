@@ -4,6 +4,7 @@ let ellipses = document.getElementsByClassName("ellipse");
 let isProcessing = false; // Flag to prevent multiple clicks
 let slideInterval; // Variable to hold the interval
 
+
 // Hide all slides and show only the first one initially
 function initializeSlides() {
     for (let i = 0; i < slides.length; i++) {
