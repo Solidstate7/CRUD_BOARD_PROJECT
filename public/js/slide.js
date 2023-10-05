@@ -1,11 +1,22 @@
 let slideIndex = 0;
+let slides = document.getElementsByClassName("slide");
+let ellipses = document.getElementsByClassName("ellipse");
+let isProcessing = false; // Flag to prevent multiple clicks
+let slideInterval; // Variable to hold the interval
+
+// Hide all slides and show only the first one initially
+function initializeSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        ellipses[i].classList.remove("active");
+    }
+    slides[0].style.display = "block";
+    ellipses[0].classList.add("active");
+}
 
 function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    let ellipses = document.getElementsByClassName("ellipse");
-
-    console.log(`slide :`, slides);
-    console.log(`eli :`, ellipses);
+    if (isProcessing) return; // Prevent multiple clicks
+    isProcessing = true; // Set flag to true
 
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
@@ -17,11 +28,38 @@ function showSlides() {
     if (slideIndex > slides.length) {
         slideIndex = 1;
     }
-    slides[slideIndex - 1].style.left = "0";
+
     slides[slideIndex - 1].style.display = "block";
     ellipses[slideIndex - 1].classList.add("active");
 
-    setTimeout(showSlides, 5000);
+    setTimeout(() => {
+        isProcessing = false; // Reset flag
+    }, 500); // Reset flag after 500ms
 }
 
-showSlides();
+// Function to start the automatic slideshow
+function startSlideShow() {
+    slideInterval = setInterval(showSlides, 2000);
+}
+
+// Initial setup
+initializeSlides();
+
+// Initial call to start the slideshow
+startSlideShow();
+
+// Event listener for ellipses
+for (let i = 0; i < ellipses.length; i++) {
+    ellipses[i].addEventListener("click", (event) => {
+        if (isProcessing) return; // Prevent multiple clicks
+
+        clearInterval(slideInterval); // Clear the existing interval
+
+        let clickIndex = Array.from(ellipses).indexOf(event.target);
+        slideIndex = clickIndex; // Update slideIndex
+
+        showSlides(); // Show the slide
+
+        startSlideShow(); // Restart the automatic slideshow
+    });
+}
