@@ -11,7 +11,7 @@ exports.getList = async (req, res) => {
 // Write
 
 exports.getWrite = (req, res) => {
-    res.render("board/write.html");
+    res.render("board/write.html", {user: req.user});
 };
 
 exports.postWrite = async (req, res) => {
