@@ -1,11 +1,13 @@
 .formbox {
     margin: auto;
     width: 60%;
-    height: 650px;
+    height: auto;
     margin-top: 50px;
 }
 .firstLine {
     margin-top: 20px;
+    display: flex;
+    gap: 10px;
 }
 
 select[name="category"] {
@@ -13,6 +15,7 @@ select[name="category"] {
     padding: 10px 15px;
     width: 130px;
     margin-left: 20px;
+    border-radius: 10px;
 }
 
 input[name="author"] {
@@ -21,6 +24,14 @@ input[name="author"] {
     width: 250px;
     margin-left: 20px;
 }
+
+.firstLine > span {
+    width: 200px;
+    border: 1px solid #747373;
+    padding: 8px 14px;
+    border-radius: 10px;
+}
+
 .secondLine {
     border: 1px solid #747373;
     width: 95%;
@@ -30,7 +41,7 @@ input[name="author"] {
 input[name="title"] {
     font-size: 14px;
     padding: 10px 15px;
-
+    width: 100%;
     border: none;
 }
 input[name="title"]:focus,
@@ -51,8 +62,8 @@ textarea[name="content"]:focus {
 }
 
 .thirdLine > textarea {
-    min-height: 400px;
-    min-width: 800px;
+    height: 350px;
+    width: 100%;
     resize: none;
     border: none;
     padding: 10px 15px;
