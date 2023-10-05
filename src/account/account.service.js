@@ -15,7 +15,7 @@ exports.signin = async (obj_input) => {
         const result = await database.searchAccount.execute(obj_input);
         if (!result) return {isSignin: false, data: null};
 
-        console.log(result);
+        console.log('Account Service User Info:', result);
 
         const token = jwt.sign(
             {user_id: result.user_id, lvl: result.lvl},

@@ -11,6 +11,7 @@ exports.getList = async (req, res) => {
 // Write
 
 exports.getWrite = (req, res) => {
+    if (!req.user) return res.redirect(`/accounts/signin`)
     res.render("board/write.html", {user: req.user});
 };
 
@@ -30,6 +31,8 @@ exports.getView = async (req, res) => {
 
 // Modify
 exports.getModify = async (req, res) => {
+    if (!req.user) return res.redirect(`/accounts/signin`)
+    
     const result = await boardService.specify(req.query);
     console.log(result, req.user.user_id);
     if (req.user.user_id !== result.author)
@@ -42,15 +45,15 @@ exports.getModify = async (req, res) => {
 exports.postModify = async (req, res) => {
     const {id} = req.query;
     const result = await boardService.updateBoard(req.body, req.query.id);
-    if (!result)
-        return res
-            .status(401)
-            .send("No Change or cannot find the board to be updated.");
-    res.redirect(`/boards/view?id=${id}`);
+
+    // if (!result) return res.status(401).send("No Change or cannot find the board to be updated.");
+    res.redirect(`/boards/view?id=${ id }`);
 };
 
 // Delete
 exports.postDelete = async (req, res) => {
+    if (!req.user) return res.redirect(`/accounts/signin`)
+
     const result = await boardService.specify(req.query);
     console.log(result, req.user.user_id);
     if (req.user.user_id !== result.author)
