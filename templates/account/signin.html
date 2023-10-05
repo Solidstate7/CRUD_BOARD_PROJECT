@@ -4,9 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sign In</title>
-
+            
         <link type="text/css" rel="stylesheet" href="/css/index.css" />
         <link type="text/css" rel="stylesheet" href="/css/account/sign.css" />
+        {% if alert %}
+        <script>
+        alert(`아이디나 비밀번호가 일치하지 않습니다.`)
+        </script>
+        {% endif %}
     </head>
     <body>
         <div class="main">

@@ -34,7 +34,7 @@ exports.postSignin = async (req, res, next) => {
         const result = await accountService.signin(req.body);
 
         if (!result.isSignin)
-            return res.status(401).send(`Invalid ID or Password.`);
+            return res.render("account/signin.html", {alert: true})
 
         res.cookie("token", result.data);
         res.redirect("/");
