@@ -16,31 +16,35 @@ exports.getWrite = (req, res) => {
 
 exports.postWrite = async (req, res) => {
     const result = boardService.createBoard(req.body);
-    res.redirect(`/boards/view?id=${result.id}`, {...result});
+    res.redirect(`/boards/view?id=${ result.id }`);
 };
 
 // View
 exports.getView = (req, res) => {
-    res.render("board/view.html", {user: req.user});
+    const result = boardService.specify(req.query.id)
+    if (!result) res.status(401).send(`Cannot find this board.`)
+    res.render("board/view.html", { ...result, user: req.user});
 };
 
 // Modify
 exports.getModify = (req, res) => {
     const result = boardService.specify(req.query.id);
-    res.render("board/modify.html", {user: req.user});
+    if (!result) res.status(401).send(`Cannot find this board.`)
+    res.render("board/modify.html", { ...result, user: req.user });
 };
 
 exports.postModify = (req, res) => {
-    const {id} = req.query;
+    const { id } = req.query;
     const result = boardService.updateBoard(req.body);
     if (!result)
         res.status(401).send(
             "No Change or cannot find the board to be updated."
         );
-    res.redirect(`/boards/view?id=${id}`);
+    res.redirect(`/boards/view?id=${ id }`);
 };
 
 // Delete
 exports.postDelete = (req, res) => {
     const result = boardService.deleteBoard(req.query.id);
+    if(!result) return res.status(401).send(`Cannot delete.`);
 };
