@@ -27,24 +27,42 @@
             <div class="wrapper">
                 <div class="viewbox">
                     <div class="firstLine">
-                        <div class="category">시설장비</div>
-                        <h2>에너지드링크 냉장고 만들어주세요</h2>
+                        <div class="category">
+                        {% if category == 1 %}
+                        훈련내용
+                        {% elif category == 2 %}
+                        훈련방법
+                        {% elif category == 3 %}
+                        훈련교사
+                        {% elif category == 4 %}
+                        시설장비
+                        {% elif category == 5 %}
+                        행정서비스
+                        {% elif category == 6 %}
+                        취업지원
+                        {% else %}
+                        카테고리 없음
+                        {% endif %}
+                        </div>
+                        <h2>{{title}}</h2>
                     </div>
                     <div class="secondLine">
-                        <p>뻐꾸기 &nbsp; | &nbsp; 23-10-01</p>
-                        <p>조회수 1000</p>
+                        <p>{{author}} &nbsp; | &nbsp; {{date}}</p>
+                        <p>조회수 {{hit}}</p>
                     </div>
                     <div class="line"></div>
-                    <div class="thirdLine"></div>
+                    <div class="thirdLine">{{content}}</div>
                     <div class="btnbox">
-                        <div class="tolist">
+                        <div class="tolist font">
                             <a href="/notice/list">목록</a>
                         </div>
-                        <div class="tomodify">
+                        <div class="tomodify font">
                             <a href="/notice/modify?id={{id}}">수정</a>
                         </div>
                         <form method="post" action="/notice/delete?id={{id}}">
-                            <button type="submit" class="todelete">삭제</button>
+                            <button type="submit" class="todelete font">
+                                삭제
+                            </button>
                         </form>
                     </div>
                 </div>

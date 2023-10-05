@@ -5,15 +5,13 @@ const noticeController = require("./notice.controller");
 router.get("/list", noticeController.getList);
 
 router.get("/write", noticeController.getWrite);
-
-router.post("/write");
+router.post("/write", noticeController.postWrite);
 
 router.get("/view", noticeController.getView);
 
 router.get("/modify", noticeController.getModify);
+router.post("/modify", noticeController.postModify);
 
-router.post("/modify");
-
-router.post("/delete");
+router.post("/delete", noticeController.postDelete);
 
 module.exports = router;
