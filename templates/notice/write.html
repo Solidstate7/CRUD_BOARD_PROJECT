@@ -26,7 +26,7 @@
             </div>
             <div class="wrapper">
                 <div class="formbox">
-                    <form action="/boards/write" method="post">
+                    <form action="/notice/write" method="post">
                         <div class="firstLine">
                             <select name="category">
                                 <option disabled selected>선택하세요</option>
@@ -38,10 +38,12 @@
                                 <option value="6">취업지원</option>
                             </select>
                             <input
-                                type="text"
+                                type="hidden"
                                 name="author"
                                 placeholder="작성자"
+                                value="{{user.user_id}}"
                             />
+                            <span>작성자: {{user.user_id}}</span>
                         </div>
                         <div class="secondLine">
                             <input

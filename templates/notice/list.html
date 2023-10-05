@@ -50,21 +50,43 @@
                             </tr>
                         </thead>
 
-                        <!-- {% for data in list %}
-                        <tr>
-                            <td>{{data.id}}</td>
-                            <td>{{data.category}}</td>
-                            <td>
-                                <a href="/notice/view?id={{data.id}}">
-                                    {{data.title}}
-                                </a>
-                            </td>
-                            <td>{{data.author}}</td>
-                            <td>{{data.date}}</td>
-                            <td>{{data.hit}}</td>
-                        </tr>
-                        {% endfor %} -->
+                        {% for data in list %}
                         <tbody>
+                            <tr>
+                                <td>{{data.id}}</td>
+                                <td>
+                                    {% if data.category == 1 %}
+                                    훈련내용
+                                    {% elif data.category == 2 %}
+                                    훈련방법
+                                    {% elif data.category == 3 %}
+                                    훈련교사
+                                    {% elif data.category == 4 %}
+                                    시설장비
+                                    {% elif data.category == 5 %}
+                                    행정서비스
+                                    {% elif data.category == 6 %}
+                                    취업지원
+                                    {% else %}
+                                    카테고리 없음
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="/notice/view?id={{data.id}}">
+                                        {{data.title}}
+                                    </a>
+                                </td>
+                                {% if data.author %}
+                                <td>{{data.author}}</td>
+                                {% else %}
+                                <td>탈퇴한 회원</td>
+                                {% endif %}
+                                <td>{{data.date}}</td>
+                                <td>{{data.hit}}</td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                        <!-- <tbody>
                             <tr>
                                 <td>10</td>
                                 <td>시설장비</td>
@@ -145,7 +167,7 @@
                                 <td>23-06-01</td>
                                 <td>10</td>
                             </tr>
-                        </tbody>
+                        </tbody> -->
                     </table>
                     <div class="pagination">
                         <div class="page">1</div>

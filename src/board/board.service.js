@@ -16,12 +16,12 @@ exports.createBoard = async (obj_data) => {
 }
 
 // View (Read / Hit Increment)
-exports.specifyView = async (obj_data) => {
+exports.specifyView = async (obj_data, finder) => {
     const result = await database.searchBoard.execute(obj_data)
     result.hit++
-    console.log(result.hit);
     const {id, ...rest} = result
-    const newResult = await database.updateBoard.execute(rest)
+    await database.updateBoard.execute(rest, finder)
+    const newResult = await database.searchBoard.execute(obj_data)
     return newResult
 }
 
@@ -32,10 +32,9 @@ exports.specify = async (obj_data) => {
 }
 
 // Modify (Update)
-exports.updateBoard = async (obj_data) => {
+exports.updateBoard = async (obj_data, finder) => {
     const {id, ...rest} = obj_data
-    const result = await database.updateBoard.execute(rest)
-    console.log(result);
+    const result = await database.updateBoard.execute(rest, finder)
     return result
 }
 

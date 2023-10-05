@@ -29,7 +29,23 @@
                     <form action="/boards/modify?id={{id}}" method="post">
                         <div class="firstLine">
                             <select name="category">
-                                <option disabled selected>{{category}}</option>
+                                <option disabled selected value="">
+                                    {% if category == 1 %}
+                                    훈련내용
+                                    {% elif category == 2 %}
+                                    훈련방법
+                                    {% elif category == 3 %}
+                                    훈련교사
+                                    {% elif category == 4 %}
+                                    시설장비
+                                    {% elif category == 5 %}
+                                    행정서비스
+                                    {% elif category == 6 %}
+                                    취업지원
+                                    {% else %}
+                                    카테고리 없음
+                                    {% endif %}
+                                </option>
                                 <option value="1">훈련내용</option>
                                 <option value="2">훈련방법</option>
                                 <option value="3">훈련교사</option>
@@ -37,11 +53,7 @@
                                 <option value="5">행정서비스</option>
                                 <option value="6">취업지원</option>
                             </select>
-                            <input
-                                type="text"
-                                name="author"
-                                value="{{author}}"
-                            />
+                            <span>작성자: {{author}}</span>
                         </div>
                         <div class="secondLine">
                             <input type="text" name="title" value="{{title}}" />
