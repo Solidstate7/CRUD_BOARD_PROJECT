@@ -5,29 +5,29 @@ const boardService = require("./board.service");
 // List
 exports.getList = async (req, res) => {
     const result = await boardService.fetchAllBoards();
-    res.render("board/list.html", {list: result});
+    res.render("board/list.html", {list: result, user: req.user});
 };
 
 // Write
 
 exports.getWrite = (req, res) => {
-    res.render("board/write.html");
+    res.render("board/write.html", {user: req.user});
 };
 
 exports.postWrite = async (req, res) => {
     const result = boardService.createBoard(req.body);
-    res.redirect(`/boards/view?id=${result.id}`);
+    res.redirect(`/boards/view?id=${result.id}`, {...result});
 };
 
 // View
 exports.getView = (req, res) => {
-    res.render("board/view.html");
+    res.render("board/view.html", {user: req.user});
 };
 
 // Modify
 exports.getModify = (req, res) => {
     const result = boardService.specify(req.query.id);
-    res.render("board/modify.html");
+    res.render("board/modify.html", {user: req.user});
 };
 
 exports.postModify = (req, res) => {
