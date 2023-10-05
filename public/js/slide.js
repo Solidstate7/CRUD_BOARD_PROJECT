@@ -4,6 +4,17 @@ let ellipses = document.getElementsByClassName("ellipse");
 let isProcessing = false; // Flag to prevent multiple clicks
 let slideInterval; // Variable to hold the interval
 
+
+// Hide all slides and show only the first one initially
+function initializeSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        ellipses[i].classList.remove("active");
+    }
+    slides[0].style.display = "block";
+    ellipses[0].classList.add("active");
+}
+
 function showSlides() {
     if (isProcessing) return; // Prevent multiple clicks
     isProcessing = true; // Set flag to true
@@ -29,8 +40,11 @@ function showSlides() {
 
 // Function to start the automatic slideshow
 function startSlideShow() {
-    slideInterval = setInterval(showSlides, 5000);
+    slideInterval = setInterval(showSlides, 2000);
 }
+
+// Initial setup
+initializeSlides();
 
 // Initial call to start the slideshow
 startSlideShow();

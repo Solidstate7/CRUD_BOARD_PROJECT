@@ -57,7 +57,11 @@
                                         {{data.title}}
                                     </a>
                                 </td>
+                                {% if data.author %}
                                 <td>{{data.author}}</td>
+                                {% else %}
+                                <td>탈퇴한 회원</td>
+                                {% endif %}
                                 <td>{{data.date}}</td>
                                 <td>{{data.hit}}</td>
                             </tr>
