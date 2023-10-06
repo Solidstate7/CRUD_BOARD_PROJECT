@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Board</title>
+        <title>Board List</title>
         <link type="text/css" rel="stylesheet" href="/css/index.css" />
         <link type="text/css" rel="stylesheet" href="/css/board/list.css" />
+        <link rel="icon" type="image/png" href="/images/pavicon.png" />
     </head>
     <body>
         <div class="main">
@@ -53,21 +54,13 @@
                             <tr>
                                 <td>{{data.id}}</td>
                                 <td>
-                                    {% if data.category == 1 %}
-                                    훈련내용
-                                    {% elif data.category == 2 %}
-                                    훈련방법
-                                    {% elif data.category == 3 %}
-                                    훈련교사
-                                    {% elif data.category == 4 %}
-                                    시설장비
-                                    {% elif data.category == 5 %}
-                                    행정서비스
-                                    {% elif data.category == 6 %}
-                                    취업지원
-                                    {% else %}
-                                    카테고리 없음
-                                    {% endif %}
+                                    {% if data.category == 1 %} 훈련내용 {% elif
+                                    data.category == 2 %} 훈련방법 {% elif
+                                    data.category == 3 %} 훈련교사 {% elif
+                                    data.category == 4 %} 시설장비 {% elif
+                                    data.category == 5 %} 행정서비스 {% elif
+                                    data.category == 6 %} 취업지원 {% else %}
+                                    카테고리 없음 {% endif %}
                                 </td>
                                 <td>
                                     <a href="/boards/view?id={{data.id}}">

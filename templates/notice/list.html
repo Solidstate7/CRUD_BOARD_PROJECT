@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Notice</title>
+        <title>Notice List</title>
         <link type="text/css" rel="stylesheet" href="/css/index.css" />
         <link type="text/css" rel="stylesheet" href="/css/notice/list.css" />
+        <link rel="icon" type="image/png" href="/images/pavicon.png" />
     </head>
     <body>
         <div class="modal-wrap">
@@ -25,7 +26,10 @@
                     <a href="/boards/list">BOARD</a>
                     <a href="/accounts/mypage">MY PAGE</a>
                     {% if user%}
-                    <a href="/accounts/signout">LEVEL: {{user.lvl}} {{user.user_id}}님 <br /> SIGN OUT</a>
+                    <a href="/accounts/signout"
+                        >LEVEL: {{user.lvl}} {{user.user_id}}님 <br />
+                        SIGN OUT</a
+                    >
                     {% else %}
                     <a href="/accounts/signin">SIGN IN</a>
                     {% endif %}
