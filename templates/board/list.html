@@ -43,12 +43,13 @@
                                 <th>Category</th>
                                 <th>Title</th>
                                 <th>Author</th>
-                                <th>Date</th>
+                                <th>Date & Time</th>
                                 <th>Hit</th>
                             </tr>
                         </thead>
 
                         {% for data in list %}
+                            {% set date = time[loop.index0] %}
                         <tbody>
                             <tr>
                                 <td>{{data.id}}</td>
@@ -79,7 +80,7 @@
                                 {% else %}
                                 <td>탈퇴한 회원</td>
                                 {% endif %}
-                                <td>{{data.date}}</td>
+                                <td>{{date}}</td>
                                 <td>{{data.hit}}</td>
                             </tr>
                         </tbody>

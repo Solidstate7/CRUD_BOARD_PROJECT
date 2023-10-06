@@ -44,3 +44,6 @@ exports.deleteBoard = async (obj_data) => {
     console.log(result);
     return result
 }
+
+// exports.createBoard({title:'asdf', content:'sadfsadfsad', author:'admin'})
+exports.specify({id:1})
