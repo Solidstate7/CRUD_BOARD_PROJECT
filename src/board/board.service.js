@@ -53,6 +53,9 @@ exports.deleteBoard = async (obj_data) => {
     return result
 }
 
-// for (let i = 0; i < 90; i++) {
-//     exports.createBoard({title:'test', author:'admin', content:'paging'})
-// }
+for (let i = 0; i < 3; i++) {
+    exports.createBoard({title:'나를 찾거라', author:'admin', content:'paging'})
+    exports.createBoard({title:'나를 찾지마', author:'admin', content:'paging'})
+    exports.createBoard({title:'나를 찾아?', author:'admin', content:'paging'})
+    exports.createBoard({title:'나를 찾음', author:'admin', content:'paging'})
+}

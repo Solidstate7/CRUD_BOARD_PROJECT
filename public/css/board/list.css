@@ -114,13 +114,13 @@ select[name="category"] {
     width: 130px;
 }
 
-input[name="search_input"] {
+input[name="search"] {
     font-size: 14px;
     padding: 10px 15px;
     width: 220px;
 }
 
-input[name="search_input"]:focus {
+input[name="search"]:focus {
     outline: none;
 }
 
