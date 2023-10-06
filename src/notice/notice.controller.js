@@ -1,11 +1,13 @@
 const noticeService = require("./notice.service");
+const Time = require('../../lib/date')
 
 // notices
 
 // List
 exports.getList = async (req, res) => {
     const result = await noticeService.fetchAllNotices();
-    res.render("notice/list.html", {list: result, user: req.user});
+    const dateArr = result.map(board => new Time(board.date).getDate())
+    res.render("notice/list.html", {list: result, time: dateArr, user: req.user});
 };
 
 // Write
@@ -28,7 +30,8 @@ exports.postWrite = async (req, res) => {
 exports.getView = async (req, res) => {
     const result = await noticeService.specifyView(req.query, req.query.id)
     if (!result) return res.status(401).send(`Cannot find this notice.`)
-    res.render("notice/view.html", {...result, user: req.user});
+    const date = new Time(result.date).getDate()
+    res.render("notice/view.html", {...result, time: date, user: req.user});
 };
 
 // Modify
