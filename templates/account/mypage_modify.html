@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Page</title>
+        <title>Edit My Page</title>
         <link type="text/css" rel="stylesheet" href="/css/index.css" />
         <link type="text/css" rel="stylesheet" href="/css/account/mypage.css" />
+        <link rel="icon" type="image/png" href="/images/pavicon.png" />
     </head>
     <body>
         <div class="main">
@@ -33,7 +34,11 @@
                     <div class="user_id">{{user_id}}</div>
                     <div class="infobox modify">
                         <form action="/accounts/modify" method="post">
-                            <input type="hidden" name="user_id" value="{{user_id}}">
+                            <input
+                                type="hidden"
+                                name="user_id"
+                                value="{{user_id}}"
+                            />
                             <div class="info">
                                 <div>
                                     <img src="/images/id.png" />
