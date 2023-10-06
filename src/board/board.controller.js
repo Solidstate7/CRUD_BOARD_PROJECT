@@ -5,9 +5,15 @@ const Time = require('../../lib/date')
 
 // List
 exports.getList = async (req, res) => {
-    const result = await boardService.fetchAllBoards();
+    const currentPage = req.query.page ? parseInt(req.query.page) : 1
+    const currentSearch = req.query.search
+    const { totalPages, startPage, endPage, result,}  = await boardService.fetchAllBoards(currentPage, currentSearch);
+    
+    if(!result) return res.redirect('/boards/list')
+
     const dateArr = result.map(board => new Time(board.date).getDate())
-    res.render("board/list.html", {list: result, time: dateArr, user: req.user});
+    const renderObj = {list: result, time: dateArr, totalPages, startPage, endPage, user: req.user, current_search: currentSearch}
+    res.render("board/list.html", renderObj);
 };
 
 // Write
@@ -37,7 +43,7 @@ exports.getModify = async (req, res) => {
     if (!req.user) return res.redirect(`/accounts/signin`)
     
     const result = await boardService.specify(req.query);
-    console.log(result, req.user.user_id);
+
     if (req.user.user_id !== result.author)
         return res.status(401).send(`작성자만 수정할 수 있습니다.`);
 
@@ -58,7 +64,7 @@ exports.postDelete = async (req, res) => {
     if (!req.user) return res.redirect(`/accounts/signin`)
 
     const result = await boardService.specify(req.query);
-    console.log(result, req.user.user_id);
+
     if (req.user.user_id !== result.author)
         return res.status(401).send(`작성자만 삭제할 수 있습니다.`);
 

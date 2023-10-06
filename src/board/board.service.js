@@ -1,10 +1,19 @@
 const database = require('../../lib/database')
 
 // List (Read) -> Select All
-exports.fetchAllBoards = async () => {
+exports.fetchAllBoards = async (current_page = 1, current_search) => {
     try {
-        const result = await database.listBoard.execute()
-        return result
+        const limit = 10
+        const blockSize = 5
+        const currentBlock = Math.ceil(current_page / blockSize)
+        const totalBoards = await database.countBoardData.execute(current_search);
+
+        const totalPages = Math.ceil(totalBoards / limit)
+        const startPage = (currentBlock - 1) * blockSize + 1
+        const endPage = Math.min(currentBlock * blockSize, totalPages)
+
+        const result = await database.listBoard.execute(current_page, current_search)
+        return { totalPages, startPage, endPage, result }
     } catch (e) {
         throw new Error('boardService Error: ' + e.message)
     }
@@ -41,9 +50,9 @@ exports.updateBoard = async (obj_data, finder) => {
 // Delete
 exports.deleteBoard = async (obj_data) => {
     const result = await database.deleteBoard.execute(obj_data)
-    console.log(result);
     return result
 }
 
-// exports.createBoard({title:'asdf', content:'sadfsadfsad', author:'admin'})
-exports.specify({id:1})
+// for (let i = 0; i < 90; i++) {
+//     exports.createBoard({title:'test', author:'admin', content:'paging'})
+// }
