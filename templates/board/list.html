@@ -80,9 +80,17 @@
                         {% endfor %}
                     </table>
                     <div class="pagination">
-                        <div class="page">1</div>
-                        <div class="page">2</div>
-                        <div class="page">></div>
+                    {% if startPage > 1 %}
+                    <a href="/boards/list?page={{ startPage - 1 }}&search={{ current_search }}">< Prev </a>
+                    {% endif %}
+                                    
+                    {% for i in range(startPage, endPage + 1) %}
+                    <a href="/boards/list?page={{ i }}&search={{ current_search }}" {% if i == currentPage %}style="font-weight: bold;"{% endif %}>{{ i }}</a>
+                    {% endfor %}
+                                    
+                    {% if endPage < totalPages %}
+                    <a href="/boards/list?page={{ endPage + 1 }}&search={{ current_search }}"> Next ></a>
+                    {% endif %}                   
                     </div>
                     <div class="boardSide">
                         <div class="boardSearch">
@@ -100,7 +108,7 @@
                                 </select>
                                 <input
                                     type="text"
-                                    name="search_input"
+                                    name="search"
                                     placeholder="검색어를 입력하세요"
                                 />
                                 <button type="submit" class="searchbtn">

@@ -18,7 +18,7 @@ exports.signin = async (obj_input) => {
         console.log('Account Service User Info:', result);
 
         const token = jwt.sign(
-            {user_id: result.user_id, lvl: result.lvl},
+            {user_id: result.user_id},
             "salt"
         );
         return {isSignin: true, data: token};

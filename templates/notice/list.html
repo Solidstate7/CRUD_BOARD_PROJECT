@@ -26,10 +26,7 @@
                     <a href="/boards/list">BOARD</a>
                     <a href="/accounts/mypage">MY PAGE</a>
                     {% if user%}
-                    <a href="/accounts/signout"
-                        >LEVEL: {{user.lvl}} {{user.user_id}}님 <br />
-                        SIGN OUT</a
-                    >
+                    <a href="/accounts/signout">SIGN OUT</a>
                     {% else %}
                     <a href="/accounts/signin">SIGN IN</a>
                     {% endif %}
@@ -110,7 +107,7 @@
                                 </select>
                                 <input
                                     type="text"
-                                    name="search_input"
+                                    name="search"
                                     placeholder="검색어를 입력하세요"
                                 />
                                 <button type="submit" class="searchbtn">
