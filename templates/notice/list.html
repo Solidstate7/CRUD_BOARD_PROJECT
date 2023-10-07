@@ -90,9 +90,26 @@
 
                     </table>
                     <div class="pagination">
-                        <div class="page">1</div>
-                        <div class="page">2</div>
-                        <div class="page">></div>
+                        <!-- totalPages, startPage, endPage, currentPage, current_search: search -->
+                        
+                        {% if startPage > 1 %}
+                        <a href="/notice/list?page={{ startPage - 1 }}&search={{ current_search }}">< Prev</a>
+                        {% endif %}
+
+                        {% for i in range(startPage, endPage + 1) %}
+                        <a href="/notice/list?page={{ i }}&search={{ current_search }}"
+                        {% if i == currentPage %}
+                            style="font-weight: bold;"
+                        {% endif %}
+                        >
+                            {{ i }}
+                        </a>
+                        {% endfor %}
+
+                        {% if endPage < totalPages %}
+                        <a href="/notice/list?page={{ endPage + 1 }}&search={{ current_search }}">Next ></a>
+                        {% endif %}
+
                     </div>
                     <div class="boardSide">
                         <div class="boardSearch">
