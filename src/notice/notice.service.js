@@ -1,10 +1,19 @@
 const database = require('../../lib/database')
 
 // List (Read) -> Select All
-exports.fetchAllNotices = async () => {
+exports.fetchAllNotices = async (current_page = 1, current_search) => {
     try {
-        const result = await database.listNotice.execute()
-        return result
+        const limit = 10
+        const blockSize = 5
+        const currentBlock = Math.ceil(current_page / blockSize)
+        const totalNotice = await database.countNoticeData.execute(current_search)
+
+        const totalPages = Math.ceil(totalNotice / limit)
+        const startPage = (currentBlock - 1) * blockSize + 1
+        const endPage = Math.min(currentBlock * blockSize ,totalPages)
+
+        const result = await database.listNotice.execute(current_page, current_search)
+        return { totalPages, startPage, endPage, result }
     } catch (e) {
         throw new Error('NoticeService Error: ' + e.message)
     }
@@ -44,3 +53,10 @@ exports.deleteNotice = async (obj_data) => {
     console.log(result);
     return result
 }
+
+// for (let i = 0; i < 30; i++) {
+//     exports.createNotice({title:'나를 찾거라', author:'admin', content:'paging'})
+//     exports.createNotice({title:'나를 찾지마', author:'admin', content:'paging'})
+//     exports.createNotice({title:'나를 찾아?', author:'admin', content:'paging'})
+//     exports.createNotice({title:'나를 찾음', author:'admin', content:'paging'})
+// }

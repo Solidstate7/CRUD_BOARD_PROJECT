@@ -5,9 +5,15 @@ const Time = require('../../lib/date')
 
 // List
 exports.getList = async (req, res) => {
-    const result = await noticeService.fetchAllNotices();
+    const currentPage = req.query.page ? parseInt(req.query.page) : 1
+    const { search } = req.query
+
+    const { totalPages, startPage, endPage, result } = await noticeService.fetchAllNotices(currentPage, search)
+    if(!result) return res.redirect('/notice/list')
+
     const dateArr = result.map(board => new Time(board.date).getDate())
-    res.render("notice/list.html", {list: result, time: dateArr, user: req.user});
+    const renderObj = {list: result, time: dateArr, totalPages, startPage, endPage, currentPage, current_search: search, user: req.user }
+    res.render("notice/list.html", renderObj);
 };
 
 // Write

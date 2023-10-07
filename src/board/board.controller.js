@@ -6,13 +6,13 @@ const Time = require('../../lib/date')
 // List
 exports.getList = async (req, res) => {
     const currentPage = req.query.page ? parseInt(req.query.page) : 1
-    const currentSearch = req.query.search
-    const { totalPages, startPage, endPage, result,}  = await boardService.fetchAllBoards(currentPage, currentSearch);
+    const { search } = req.query
+    const { totalPages, startPage, endPage, result }  = await boardService.fetchAllBoards(currentPage, search);
     
     if(!result) return res.redirect('/boards/list')
 
     const dateArr = result.map(board => new Time(board.date).getDate())
-    const renderObj = {list: result, time: dateArr, totalPages, startPage, endPage, user: req.user, current_search: currentSearch}
+    const renderObj = {list: result, time: dateArr, totalPages, startPage, endPage, currentPage, current_search: search, user: req.user }
     res.render("board/list.html", renderObj);
 };
 
