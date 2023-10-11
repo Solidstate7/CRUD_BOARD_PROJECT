@@ -53,9 +53,14 @@ exports.deleteBoard = async (obj_data) => {
     return result
 }
 
-// for (let i = 0; i < 3; i++) {
-//     exports.createBoard({title:'나를 찾거라', author:'admin', content:'paging'})
-//     exports.createBoard({title:'나를 찾지마', author:'admin', content:'paging'})
-//     exports.createBoard({title:'나를 찾아?', author:'admin', content:'paging'})
-//     exports.createBoard({title:'나를 찾음', author:'admin', content:'paging'})
+// for (let i = 0; i < 10; i++) {
+//     exports.createBoard({title:'개강 예정인 수업들이 있나요?', author:'boram', content:'빠른 답변 부탁드립니다.', category: 5})
+//     exports.createBoard({title:'플밍반에서는 어떤 것들을 배우나요?', author:'boram', content:'빠른 답변 부탁드립니다.', category: 1})
+//     exports.createBoard({title:'어떤 책들로 수업하는지 미리 알고싶어요', author:'boram', content:'빠른 답변 부탁드립니다.', category: 2})
+//     exports.createBoard({title:'취업률은 어떻게 되나요?', author:'boram', content:'빠른 답변 부탁드립니다.', category: 6})
+//     exports.createBoard({title:'훈련장려금 지급 날짜 좀 지켜주세요~', author:'boram', content:'빠른 답변 부탁드립니다.', category: 5})
+//     exports.createBoard({title:'5층 화장실 너무 너무 불편해요', author:'boram', content:'빠른 답변 부탁드립니다.', category: 4})
+//     exports.createBoard({title:'혹시 교수님이 바뀔 수도 있나요?', author:'boram', content:'빠른 답변 부탁드립니다.', category: 3})
+//     exports.createBoard({title:'에너지드링크 냉장고 설치해주세요', author:'boram', content:'빠른 답변 부탁드립니다.', category: 4})
+//     exports.createBoard({title:'와이파이 문제가 자꾸 생기는데 수리 요청 좀 해주세요.', author:'boram', content:'빠른 답변 부탁드립니다.', category: 4}) 
 // }

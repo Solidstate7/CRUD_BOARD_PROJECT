@@ -5,7 +5,7 @@ exports.getSignup = (req, res) => {
     res.render("account/signup.html");
 };
 
-exports.postSignup = async (req, res) => {
+exports.postSignup = async (req, res, next) => {
     try {
         const result = await accountService.signup(req.body);
 

@@ -54,9 +54,14 @@ exports.deleteNotice = async (obj_data) => {
     return result
 }
 
-// for (let i = 0; i < 30; i++) {
-//     exports.createNotice({title:'나를 찾거라', author:'admin', content:'paging'})
-//     exports.createNotice({title:'나를 찾지마', author:'admin', content:'paging'})
-//     exports.createNotice({title:'나를 찾아?', author:'admin', content:'paging'})
-//     exports.createNotice({title:'나를 찾음', author:'admin', content:'paging'})
+// for (let i = 0; i < 10; i++) {
+//     exports.createNotice({title:'새로운 강사진 소개', author:'admin', content:'담당자가 휴가기간이라 자세한 내용은 추후에 업데이트 하겠습니다.', category: 3 })
+//     exports.createNotice({title:'행정부서 연락처 안내', author:'admin', content:'담당자가 휴가기간이라 자세한 내용은 추후에 업데이트 하겠습니다.', category: 5 })
+//     exports.createNotice({title:'교재 지급 리스트', author:'admin', content:'담당자가 휴가기간이라 자세한 내용은 추후에 업데이트 하겠습니다.', category: 1 })
+//     exports.createNotice({title:'무선인터넷 수리 일정 안내', author:'admin', content:'담당자가 휴가기간이라 자세한 내용은 추후에 업데이트 하겠습니다.', category: 4 })
+//     exports.createNotice({title:'기업 리스트 안내드립니다', author:'admin', content:'담당자가 휴가기간이라 자세한 내용은 추후에 업데이트 하겠습니다.', category: 6 })
+//     exports.createNotice({title:'추석연휴 기간 안내입니다', author:'admin', content:'담당자가 휴가기간이라 자세한 내용은 추후에 업데이트 하겠습니다.', category: 5 })
+//     exports.createNotice({title:'5층 화장실 리모델링 예정 날짜 안내', author:'admin', content:'담당자가 휴가기간이라 자세한 내용은 추후에 업데이트 하겠습니다.', category: 4 })
+//     exports.createNotice({title:'훈련장려금 지급 날짜', author:'admin', content:'담당자가 휴가기간이라 자세한 내용은 추후에 업데이트 하겠습니다.', category: 5 })
+//     exports.createNotice({title:'에너지드링크 냉장고 설치 예정 날짜 안내', author:'admin', content:'담당자가 휴가기간이라 자세한 내용은 추후에 업데이트 하겠습니다.', category: 4 })
 // }
