@@ -29,6 +29,10 @@ app.use(middleware.auth)
 
 app.use(router)
 
+app.use((err, req, res, next) => {
+    res.render('account/signup.html', {alert: true})
+})
+
 // Listen
 app.listen(SERVER_PORT || 3000, async () => {
     try {

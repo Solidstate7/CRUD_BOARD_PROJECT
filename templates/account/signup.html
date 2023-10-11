@@ -7,6 +7,11 @@
         <link type="text/css" rel="stylesheet" href="/css/index.css" />
         <link type="text/css" rel="stylesheet" href="/css/account/sign.css" />
         <link rel="icon" type="image/png" href="/images/pavicon.png" />
+        {% if alert %}
+        <script>
+            alert('아이디가 중복되어 사용이 불가합니다.')
+        </script>
+        {% endif %}
     </head>
     <body>
         <div class="main">
