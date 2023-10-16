@@ -13,15 +13,12 @@ exports.signup = async (obj_input) => {
 exports.signin = async (obj_input) => {
     try {
         const result = await database.searchAccount.execute(obj_input);
-        if (!result) return {isSignin: false, data: null};
+        if (!result) return { isSignin: false, data: null };
 
-        console.log('Account Service User Info:', result);
+        console.log("Account Service User Info:", result);
 
-        const token = jwt.sign(
-            {user_id: result.user_id},
-            "salt"
-        );
-        return {isSignin: true, data: token};
+        const token = jwt.sign({ user_id: result.user_id }, "salt");
+        return { isSignin: true, data: token };
     } catch (e) {
         throw new Error("accountService Error " + e.message);
     }
@@ -33,10 +30,9 @@ exports.specifyUser = async (user_info) => {
         if (!result) return false;
         return result;
     } catch (e) {
-        throw new Error('accountService Error ' + e.message);
+        throw new Error("accountService Error " + e.message);
     }
 };
-
 
 exports.edit = async (fields, whereField) => {
     try {
